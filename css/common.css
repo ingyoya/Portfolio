@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Philosopher','Arita-dotum',sans-serif; 
+    font-size: 1.6rem; 
+    line-height: 1.5; 
+    color: #000;
+    word-break: keep-all; /* 단어가 중간에 끊기지 않고 넘어갈 수 있게 한다. */
+}
+
+#wrap {overflow-x: hidden; min-width: 320px; position: relative; padding-top: 80px;}
+
+.inner {max-width: calc(100% - 200px) ; margin: 0 auto;}
+
+@media (max-width:1600px) {
+    .inner {max-width: calc(100% - 160px);}
+}
+
+@media (max-width:1400px) {
+    .inner {max-width: calc(100% - 140px);}
+}
+
+@media (max-width:1200px) {
+    .inner {max-width: calc(100% - 120px);}
+}
+
+@media (max-width:1000px) {
+    .inner {max-width: calc(100% - 100px);}
+}
+
+@media (max-width:768px) {
+    .inner {max-width: calc(100% - 80px);}
+}
+
+@media (max-width:500px) {
+    .inner {max-width: calc(100% - 40px);}
+}
+
+
+/* ---------- */
+
+
+/* popup */
+.popup { padding: 10px; background: #a89079; text-align: center;}
+.popup a {color: #fff; }
+.popup .popup_close {float: right; cursor: pointer; color: #fff; font-size: 3rem; line-height: 0;}
+
+
+
+
+
+/* sitemap */
+.sitemap {
+    z-index: 999; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    
+    width: 100%; 
+    height: 100%;
+    background: #67625e; 
+    
+    text-align: center;
+    padding: 100px 0;
+}
+.sitemap .tit {font-size: 10rem; color: #a89079;}
+.sitemap .sitemap_close {position: absolute; right: 0; top: 0; cursor: pointer;}
+
+.sitemap .mgnb {display: flex; justify-content: center; gap: 100px; text-align: center; font-size: 3rem; }
+.sitemap .mgnb > li > a {display: block; color: #fff; padding: 10px 0; border-bottom: 1px solid #fff; }
+
+
+
+
+
+/* header */
+#header { z-index: 99; position: absolute; top: 0; left: 0; width: 100%;}
+#header .inner {
+    padding-top: 10px;
+    align-items: center;
+    height: 80px;
+    /* 로고와 메뉴 등 line-height 정렬을 맞추기위해 height와 align-items을 작성 */ 
+    display: flex; 
+    justify-content: space-between;}
+
+#header .gnb {display: flex;}
+#header .gnb > li {position: relative;}
+#header .gnb > li:before {
+    transition: opacity 0.5s,top 0.5s;  
+    opacity: 0; 
+    
+    content: ''; 
+    display: block; 
+   
+    width: 8px; height: 8px; 
+    border-radius: 50%; 
+    background:#758246; 
+    
+    position: absolute; 
+    left: calc(50% - 4px); 
+    top: -10px;
+}
+#header .gnb > li:hover:before {top: 0; opacity: 1;}
+#header .gnb > li > a {display: block; font-size: 2rem; padding: 10px 40px;}
+
+#header .gnb > li:hover > a {color: #758246;}
+
+#header .gnb > li > .depth2 {position: absolute; left: 0; top: 70px; display: flex; width: 500px;}
+#header .gnb > li > .depth2 li a { transition: color 0.5s; color: #fff; display: block; padding: 5px 15px;}
+#header .gnb > li > .depth2 li:hover a {color:#f4dc9c;}
+
+
+#header .depth2_bg { z-index: -1; width: 100%; height: 50px; position: absolute; left: 0; top: 80px; background: #758246;}
+
+
+
+/* mgnb */
+#header .mgnb_wrap { padding: 70px 24px; position: fixed;left: 0;top: 0; width: 100%; height: 100%; background: #fff;}
+#header .mgnb_wrap .mgnb {border-top: 1px solid #000;}
+#header .mgnb_wrap .mgnb > li {border-bottom: 1px solid #ddd;font-size: 2rem;  padding: 15px 0;}
+
+#header .mgnb_wrap .mgnb .mdepth2 {font-size: 1.4rem;}
+#header .mgnb_wrap .mgnb .mdepth2 > li > a { color: #999; position: relative; display: block; padding:4px 30px;}
+#header .mgnb_wrap .mgnb .mdepth2 > li > a:before {content: ''; width: 5px; height: 5px; background: #999; border-radius: 50%; left: 15px; top:calc(50% - 3px); position: absolute;}
+
+#header .mgnb_close {position: absolute; right: 24px; top: 35px; font-size: 2.5rem; color: #999;}
+
+
+
+
+
+
+#header .util {display: flex; gap: 20px;}
+#header .util img {width: 20px;}
+
+#header .util .btn_search {cursor: pointer;}
+#header .util .btn_sitemap {cursor: pointer;}
+
+#header .util .btn_ham { cursor: pointer; display: none;} /* pc에서는 안보이게 mobile에서는 보이게 처리 */
+
+
+@media (max-width:1024px) {
+    #header .gnb {display: none;}
+    #header .util .btn_sitemap {display: none;}
+    #header .util .btn_ham {display: block;}
+}
+
+@media (max-width:768px) {
+    #header .util .lang { display: none;}
+}
+
+#header .util .lang {position: relative; cursor: pointer;}
+#header .util .lang ul {position: absolute; left: -20px; top: 30px; background: #fff; padding: 20px;}
+
+
+
+
+/* footer */
+#footer { padding: 100px 0; background: #eee;}
+#footer .footer_top{ align-items: flex-end; display: flex; justify-content: space-between; border-bottom: 1px solid #ccc; padding: 20px 0;}
+#footer .footer_top ul {display: flex; gap: 30px;}
+#footer .footer_top p {text-align: center;}
+#footer .footer_top span { letter-spacing: -20; font-weight:900; font-size: 3rem; color: #758246;}
+
+
+#footer .footer_bottom { padding: 50px 0; display: flex; justify-content: space-between;}
+#footer .footer_bottom ul { display: flex; gap: 30px;}
+#footer .footer_bottom address {padding-top: 30px; color: #999;}
+#footer .footer_bottom .copy {color: #ccc;}
+
+
+@media (max-width:768px) {
+    #footer {padding: 30px 0; }
+    #footer .footer_top { gap: 15px; font-size: 1.4rem; align-items: start; display: flex; flex-direction: column;}
+    #footer .footer_top ul {gap: 15px;}
+    #footer .footer_top p {text-align: start;}
+    #footer .footer_bottom {  font-size: 1.4rem; display: flex; flex-direction: column;}
+    #footer .footer_bottom ul { display: flex; gap: 15px; flex-wrap: wrap;}
+    #footer .footer_bottom .copy {padding-top: 30px;}
+}
