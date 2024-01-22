@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 노트북 inner는 그대로 가져갈 것 */
+
+
+/* 노트북 */
+@media (max-width:1280px)
+/* mac_book_air 반응형  노트북 중에서 작은사이즈로 선정 */
+{
+
+	#menu .menu_tab {gap: 30px;}
+	#menu .menu_img .coffee div>img {width: 250px; height: 250px;}
+	#menu .menu_img .coffee div>.color {width: 250px; height: 250px;}
+
+	#brand .txt {gap: 100px;}
+	#brand .dragon {width: calc(100% - 45vw);}
+	#brand .dragon .img {left: -10%;}
+	#brand .desc { width: 55vw; padding-right: 20px;}
+	#brand .desc h2 { font-size: 5rem;}
+	#brand .desc p { font-size: 1.8rem;}
+
+	#culture .list {gap: 50px;}
+	#culture .cul_li .img {width: 230px;}
+	#culture .cul_li .txt {width: 230px;}
+	
+	#culture .cul_li .txt .color {display: none;}
+}
+/* 노트북 */
+
+
+
+
+
+@media (max-width:768px)
+/* ipad mini 세로형 반응형 높이: 1024px */
+{
+
+/* ★ 아이패드 미니 - 세로형 공동여백 수치 입니다! ★ */
+
+#main .inner {width: calc(100% * ((1603 / 1903)));}
+
+/* ★ 아이패드 미니 - 세로형 공동여백 수치 입니다! ★ */
+
+.ham {right: 40px; top: 80px;}
+#menu .menu_tab {gap: 30px;}
+#menu .menu_tab .btn {padding: 10px 20px;}
+
+#menu .menu_img {margin-top: 10px;}
+#menu .menu_img .coffee div {margin-bottom: 0;}
+#menu .menu_img .coffee div>img {width: 200px; height: 200px; border-radius: 40px;}
+
+
+#brand .txt {display: block; }
+#brand .dragon {width: 100%;}
+#brand .dragon .img {left: 5%;}
+#brand .desc {margin: 200px auto 0; width: 100%;  padding-left: 50px;}
+
+#culture {margin: 0 auto;}
+#culture .list {display: block; height: 1600px; }
+#culture .cul_li {width: 100%;padding: 50px 150px; }
+
+#culture .reser {margin: 0 auto;}
+
+
+
+
+}
+
+/* 패드 */
+
+
+
+/* 모바일 */
+
+@media (max-width:414px)
+/*iphone 11 반응형 */
+{
+    /* ★ '아이폰 11 - 세로형' 공동여백 수치 입니다! ★ */
+    
+    #main .inner {width: calc(100% * ((1703 / 1903)));}
+
+    /* ★ '아이폰 11 - 세로형' 공동여백 수치 입니다! ★ */
+
+
+
+
+
+}
+
+@media (max-width:320px)
+/*iphone5 반응형 */
+{
+/* ★ '아이폰 5 - 세로형' 공동여백 수치 입니다! ★ */
+    
+#main .inner {width: calc(100% * ((1703 / 1903)));}
+
+/* ★ '아이폰 5 - 세로형' 공동여백 수치 입니다! ★ */
+
+
+
+
+}
+
+/* 모바일 */
+
+
+
